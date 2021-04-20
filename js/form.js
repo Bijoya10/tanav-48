@@ -27,10 +27,11 @@ class Form
         })
         this.quit.mousePressed(()=>{
             //look for the correct command
-             window.close()
+             window.open('','_self').close()
         })
         this.reset.mousePressed(()=>
         {
+            location.reload()
             db.ref("/").set({
                 gameState:0,
                 playerCount:0
