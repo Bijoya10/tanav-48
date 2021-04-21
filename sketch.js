@@ -36,25 +36,3 @@ function draw() {
   
 }
 
-function mouseReleased()
-{
-  if(gameState===1)
-  {
-    if(player.index===1)
-    {
-      arrow = createSprite(player1T.x,player1T.y,70,9);
-
-     
-    }else if(player.index===2)
-    {
-      arrow = createSprite(player2T.x,player2T.y,70,9);
-
-    }
-      arrow.pointTo(mouseX,mouseY);
-    arrowGroup.add(arrow);
-    player.arrow-=1
-    
-    player.update()
-    
-  }
-}

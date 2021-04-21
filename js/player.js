@@ -6,7 +6,9 @@ class Player
         this.name="";
         this.health=15;
         this.index=null;
-        this.arrow=25
+        this.arrow=25;
+        this.vX=5;
+        this.vY=0;
 
     }
     getPlayerCount()
@@ -30,7 +32,9 @@ class Player
              angle:this.angle,
             health:this.health,
             index:this.index,
-            arrowLeft:this.arrow
+            arrowLeft:this.arrow,
+            vX:this.vX,
+            vY:this.vY
         })
         
     }
