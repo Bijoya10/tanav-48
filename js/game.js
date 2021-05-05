@@ -29,12 +29,10 @@ class Game
                 player.getPlayerCount();
             }
             form=new Form()
-            player1=createSprite(100,350,20,140);
-           
-            
-            player2=createSprite(700,350,20,140);
-            
-            
+            player1=createSprite(100,350,20,140);            
+            player2=createSprite(710,200,70,70);
+            player2.addImage("player2",player2ImgStill)
+            player2.scale=0.4
             form.display()
            
             
@@ -53,49 +51,47 @@ class Game
             rotate(allPlayers["player1"].angle)
             image(player1Img,0,0,70,70);
             pop()
-
+            
             push()
+            imageMode(CENTER)
             translate(700,200);
             rotate(allPlayers["player2"].angle)
             image(player2Img,0,0,70,70);
-            rect(0,0,20,20);
             pop()
             
             
                 
-                if(keyIsDown(LEFT_ARROW)&& player.angle>-90 )
+                if(keyIsDown(LEFT_ARROW)&& player.angle>-30 )
                 {
                     
                     player.vY=player.vY+player.angle/10
                     player.angle-=2
                     player.update()
-                }else if(keyIsDown(RIGHT_ARROW) && player.angle<90)
+                }else if(keyIsDown(RIGHT_ARROW) && player.angle<30)
                 {
                     player.vX=player.vX+player.angle/10
                     player.angle+=2
                     player.update()
                 }
+
+                
                if(keyWentDown("space"))
                {
                 if(player.index===1)
                 {
-                  arrow = createSprite(100,200,70,9);
-            
-                 
+                  arrow = createSprite(100,200,70,9);                 
                 }else if(player.index===2)
                 {
                   arrow = createSprite(700,200,70,9);
-                  
-            
+                  arrow.velocityX=-7;
+                  arrow.velocityY=-player.angle/10;
                 }
-                arrow.pointTo(400,player.angle*2)      
+                console.log(arrow.velocityY)
+                arrow.pointTo(400,(arrow.velocityY+6)*30)      
                 arrowGroup.add(arrow);
                 player.arrow-=1
-                arrow.velocityX=7;
-                arrow.velocityY=0;
-                player.update()
                 
-
+                player.update()
                }
                     
                if(player.index===1)

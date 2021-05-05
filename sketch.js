@@ -5,11 +5,12 @@ var player1,player2;
 var player1T,player2T
 var arrow,arrowDb,arrowGroup
 var player1Img
-var player2Img
+var player2Img,player2ImgStill
 function preload()
 {
   player1Img=loadImage("a2.png");
   player2Img=loadImage("a.png");
+  player2ImgStill=loadImage("p2.png")
 }
 function setup() {
   createCanvas(800,400);
